@@ -12,10 +12,10 @@ const movies = [{
     }]
 }]
 
-const resolvers = {
+const buildResolvers = db => ({
     Query: {
-        movies: () => movies,
+      movies: () => db.collection("movies").find({}).toArray(),
     },
-}
+});
 
-module.exports = resolvers;
+module.exports = buildResolvers;
