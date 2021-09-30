@@ -2,6 +2,7 @@ const { ApolloServer, gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Movie {
+    _id: ID
     title: String
     year: Int
     reviews: [Review]

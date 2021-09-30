@@ -20,8 +20,10 @@ const movies = [{
 const seed = async () => {
     const connection = await client.connect().catch(console.error);
     const Movies = connection.db("moviesGQL").collection("movies");
-    Movies.insertMany(movies).then(console.log);
-    // connection.close();
+    await Movies.deleteMany({}).then(console.log);
+    await Movies.insertMany(movies).then(console.log);
+    await Movies.find({}).toArray().then(console.log);
+    connection.close();
 }
 
 seed();
