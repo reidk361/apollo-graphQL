@@ -1,0 +1,25 @@
+{
+  "name": "apollo-graphql",
+  "version": "1.0.0",
+  "description": "A GraphQL and Apollo server.",
+  "main": "resolvers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reidk361/apollo-graphQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reidk361/apollo-graphQL/issues"
+  },
+  "homepage": "https://github.com/reidk361/apollo-graphQL#readme",
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.6.0"
+  }
+}
