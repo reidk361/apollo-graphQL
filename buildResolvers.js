@@ -1,21 +1,13 @@
-const movies = [{
-    title: 'Django Unchained',
-    year: 2012,
-    reviews: [{
-        author: 'Anthony',
-        title: 'My thoughts and feeling',
-        body: 'Great movie.'
-    }, {
-        author: 'Maryus',
-        title: 'Original was better.',
-        body: 'Prefer Jenga',
-    }]
-}]
-
 const buildResolvers = db => ({
     Query: {
       movies: () => db.collection("movies").find({}).toArray(),
     },
+    Mutation: {
+        addMovie: async (parent, args) => {
+        const result = await db.collection("movies").insertOne({...args});
+        return result;
+        }
+    }
 });
 
 module.exports = buildResolvers;

@@ -8,12 +8,20 @@ const typeDefs = gql`
     reviews: [Review]
   }
   type Review {
-      author: String
-      title: String
-      body: String
+    author: String
+    title: String
+    body: String
+  }
+  input ReviewInput {
+    author: String
+    title: String
+    body: String
   }
   type Query {
     movies: [Movie]
+  }
+  type Mutation {
+    addMovie(title: String!, year: Int!, reviews: [ReviewInput]): Movie
   }
 `;
 
